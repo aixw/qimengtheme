@@ -1,0 +1,54 @@
+<div class="sidebar">
+
+        <div class="widget widget_ui_textaub affix-top" style="top: 0px;"><a class="style01"
+                                                                             href="https://github.com/aixw/qimengtheme"
+                                                                             target="_blank"><strong>吐血推荐</strong>
+            <h2>当前网站个性主题</h2>
+            <p>qimengtheme主题是启蒙Code网站当前使用的主题，支持标签云、评论、搜索、个性推荐等等自定义功能...</p></a></div>
+
+    <div class="widget widget_ui_tags"><h3>热门标签</h3>
+        <div class="items">
+            {{#get "tags" limit="all" include="count.posts" order="count.posts desc" }}
+                {{#foreach tags}}
+                    <a href="{{url}}">{{name}} ({{count.posts}})</a>
+                {{/foreach}}
+            {{/get}}
+        </div>
+    </div>
+
+    <div class="widget widget_ui_posts" style="top: 0px;"><h3>站长推荐</h3>
+        {{#get "posts" limit="6" filter="id:5f0d84b9d1713966b4f968b8, id:5f0706d2d5bc794cb9f628da,id:5f07074ad5bc794cb9f628e1" }}
+            <ul class="nopic">
+                {{! Loop through our posts collection }}
+                {{#foreach posts}}
+                    <li><a target="_blank" href="{{url}}"><span class="text">{{title}}</span><span
+                            class="muted">{{date format="YYYY-MM-DD"}}</span></a></li>
+                {{/foreach}}
+
+            </ul>
+        {{/get}}
+    </div>
+
+    <div class="widget widget_ui_posts" style="top: 0px;"><h3>最新发布</h3>
+        {{#get "posts" limit="6" order="published_at desc"}}
+            <ul class="nopic">
+                {{! Loop through our posts collection }}
+            {{#foreach posts}}
+                <li>
+                    <a target="_blank" href="{{url}}">
+                        {{#if feature_image}}
+                            <span class="thumbnail">
+                                <img class="lazyload" data-src="{{feature_image}}" class="thumb" style="display: block;">
+                            </span>
+                        {{/if}}
+
+                        <span class="text">{{title}}</span>
+                        <span class="muted">{{date format="YYYY-MM-DD"}}</span></a>
+                </li>
+            {{/foreach}}
+
+            </ul>
+        {{/get}}
+    </div>
+
+</div>

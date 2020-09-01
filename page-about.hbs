@@ -1,0 +1,17 @@
+{{> header}}
+
+<main class="content" role="main">
+    <article class="{{post_class}}" data-post-id="{{post.id}}">
+
+        {{#post}}
+
+            <section class="post-content">
+                {{content}}
+            </section>
+
+			<div><hr /></div>
+
+        {{/post}}
+
+    </article>
+</main>

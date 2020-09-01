@@ -1,0 +1,72 @@
+{{!< default}}
+
+{{> header}}
+<div class="container">
+    <div class="content-wrap">
+        <main class="content" role="main">
+            <article class="{{post_class}}">
+                {{#post }}
+                    <h1 class="post-title">{{{title}}}</h1>
+                    <span class="post-meta">
+                        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">
+                            <i class="fa fa-calendar-o" aria-hidden="true"></i>{{date format="YYYY-MM-DD"}}</time>
+                        <span class="post-tags"><i class="fa fa-tag" aria-hidden="true"></i>{{tags}}</span>
+
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                        <span id="busuanzi_container_page_pv" class="post-Comments">
+                        阅读数（<span id="busuanzi_value_page_pv"></span>）
+                        </span>
+                    </span>
+
+                    <section class="post-content">
+                        {{content}}
+                    </section>
+
+                    {{! Inserts a devider - just for beauty ;) }}
+                    <div class="post_note" style="padding-top:50px; padding-bottom: 40px;">
+                        以上文章内容均来自<a href="{{@site.url}}" target="_blank">启蒙Code</a>，任何转载均需标明出处。
+                    </div>
+
+                    <div class="post_link">
+                        {{#prev_post}}
+                            <div class="left">
+                                <span>上一篇：</span>
+                                <a href="{{url}}">{{title}}</a>
+                            </div>
+                        {{/prev_post}}
+
+                        {{#next_post}}
+                            <div class="right">
+                                <span>下一篇：</span>
+                                <a href="{{url}}">{{title}}</a>
+                            </div>
+                        {{/next_post}}
+                    </div>
+
+                    {{#get "posts" limit="6" filter="tags:{{primary_tag.slug}} + id:-{{id}}" order="published_at desc" }}
+                        <div class="post_rec">
+                            <h3>相关推荐</h3>
+                            <ul class="nopic">
+                                {{! Loop through our posts collection }}
+                                {{#foreach posts  }}
+                                    <li>
+                                        <a target="_blank" href="{{url}}">
+                                            <span class="text">{{title}}</span>
+                                        </a>
+                                    </li>
+                                {{/foreach}}
+
+                            </ul>
+                        </div>
+                    {{/get}}
+
+                    {{> "comment"}}
+                {{/post}}
+
+            </article>
+
+        </main>
+    </div>
+
+    {{> "sider"}}
+</div>

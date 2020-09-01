@@ -1,0 +1,13 @@
+{
+  "name": "qimengtheme",
+  "author": {
+    "email": "amon.hong2013@gmail.com"
+  },
+  "config": {
+    "posts_per_page": 10
+  },
+  "version": "0.1.4",
+  "keywords": [
+    "ghost-theme"
+  ]
+}

@@ -1,0 +1,18 @@
+{{!< default}}
+
+{{> header}}
+<div class="container">
+    <div class="content-wrap">
+        {{! The main content area on the homepage }}
+        <main class="content" role="main">
+            <div class="catleader"><h1>{{tag.name}}</h1>
+                <div class="catleader-desc"> {{tag.description}}</div>
+            </div>
+
+            {{> "loop"}}
+
+        </main>
+    </div>
+
+    {{> "sider"}}
+</div>

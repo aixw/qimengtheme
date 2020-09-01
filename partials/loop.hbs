@@ -1,0 +1,21 @@
+
+{{! This is the post loop - each post will be output using this markup }}
+{{#foreach posts}}
+<article class="{{post_class}}">
+    <header class="post-header">
+        <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+        <span class="post-meta">
+            <time datetime="{{date format='YYYY-MM-DD'}}"><i class="fa fa-calendar-o" aria-hidden="true"></i>{{date format="YYYY-MM-DD"}}</time>
+        &nbsp;&nbsp;<i class="fa fa-tag" aria-hidden="true"></i>{{tags }}&nbsp;
+            <i class="fa fa-book" aria-hidden="true"></i>
+            {{reading_time minute="1分钟阅读" minutes=" % 分钟阅读"}}&nbsp;&nbsp;
+        </span>
+    </header>
+    <section class="post-excerpt">
+        <p>{{excerpt words="30"}}&hellip;</p>
+    </section>
+</article>
+{{/foreach}}
+
+{{! Previous/next page links - displayed on every page }}
+{{pagination}}

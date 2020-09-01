@@ -1,0 +1,26 @@
+{{!< default}}
+
+{{> header}}
+
+<div class="container">
+    <div class="content-wrap">
+        <main class="content" role="main">
+            <article class="{{post_class}}">
+
+                {{#get "tags" limit="all" include="count.posts" }}
+                    <ul>
+                        {{! Loop through our posts collection }}
+                        {{#foreach tags}}
+                            <li class="tag-li-clz"><a href="{{url}}">{{name}} &nbsp;({{count.posts}})</a>
+                            </li>
+                        {{/foreach}}
+
+                    </ul>
+                {{/get}}
+
+            </article>
+        </main>
+    </div>
+
+    {{> "sider"}}
+</div>

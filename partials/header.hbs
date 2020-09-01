@@ -1,0 +1,14 @@
+<header class="site-head">
+    <div class="site-head-content inner">
+        {{#if @site.logo}}
+            <a class="blog-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}"/></a>
+        {{/if}}
+
+        {{navigation}}
+
+        <div class="m-nav__right">
+             <input class="js-input-search" type="text" placeholder="请输入关键词" width="120">
+             <i class="fa fa-search js-search" aria-hidden="true"></i>
+        </div>
+    </div>
+</header>

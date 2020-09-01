@@ -1,0 +1,35 @@
+{{!< default}}
+
+{{> header}}
+<div class="container">
+    <div class="content-wrap">
+        <main class="content" role="main">
+
+            {{#foreach posts}}
+
+            <article class="{{post_class}}">
+                <header class="post-header">
+                    <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+                    <span class="post-meta">
+                        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}"><i class="fa fa-calendar-o" aria-hidden="true"></i>{{date format="YYYY-MM-DD"}}</time>
+                        <span class="post-tags"><i class="fa fa-tag" aria-hidden="true"></i>{{tags}}</span>
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                        {{reading_time minute="1分钟阅读" minutes=" % 分钟阅读"}}&nbsp;&nbsp;
+                    </span>
+                </header>
+                <section class="post-excerpt">
+                    {{#if feature_image}}<a rel="nofollow" href="{{url}}"><img class="post-image lazyload" data-src="{{feature_image}}"  alt="{{{title}}}" /></a>{{/if}}
+                    {{excerpt words="20"}} ...
+                    <div class="more-box clear-fix"><a class="read-more" rel="nofollow" href="{{url}}">阅读更多 &raquo;</a></div>
+                </section>
+            </article>
+
+            {{/foreach}}
+
+            {{pagination}}
+
+        </main>
+    </div>
+
+    {{> "sider"}}
+</div>
