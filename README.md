@@ -5,7 +5,7 @@
 [启蒙Code网](https://www.qimeng007.cn)
 
 # 下载
-可以去https://github.com/aixw/qimengtheme/release下最新的主题包，当前主题基于ghost 3.0版本
+可以去[release page](https://github.com/aixw/qimengtheme/releases)下最新的主题包，当前主题基于ghost 3.0版本
 
 # 特点
 
