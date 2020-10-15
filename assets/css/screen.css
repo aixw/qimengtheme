@@ -1264,6 +1264,15 @@ ul li.tag-li-clz {
 .post_link .right {width: 50%; float: right;padding: 5px;text-align: right;}
 .post_rec {display: flex; flex-flow: column;}
 
+
+.post-content #article_content,
+.post-content #articleContentId,
+.post-content #cb_post_title_url,
+.post-content #cnblogs_post_body,
+.post-content section:nth-child(1) > h1,
+.post-content section:nth-child(1) > article {
+    width: 100%;
+}
 /*
  *
  * End of file

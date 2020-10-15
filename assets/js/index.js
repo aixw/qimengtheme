@@ -85,7 +85,7 @@
                                 </span>
                             </header>
                             <section class="post-excerpt">
-                                <p>${bestResults[i].item.custom_excerpt==null ? '':bestResults[i].item.custom_excerpt}&hellip;</p>
+                                <p>${bestResults[i].item.custom_excerpt==null ? bestResults[i].item.title:bestResults[i].item.custom_excerpt}&hellip;</p>
                             </section>
                         </article>`
                     }
