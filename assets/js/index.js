@@ -12,7 +12,7 @@
         let fuse = null;
         const $searchBtn = $('.js-search');
         const $inputSearch = $('.js-input-search');
-        const $searchResults = $('.container .content');
+        const $searchResults = $('.ghost-container .ghost-content');
         const trySearchFeature = () => {
             if (typeof ghostSearchApiKey !== 'undefined') {
                 getAllPosts(ghostHost, ghostSearchApiKey)
